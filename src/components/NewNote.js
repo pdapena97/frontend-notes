@@ -31,8 +31,8 @@ export const NewNote = ({addNote}) => {
 
     return (
     <form onSubmit={handleForm}>
-        <h1> Add New Note</h1>
-
+        <h1> Notes List</h1>
+        
         <fieldset>
             <label htmlFor="titulo"> Titulo </label>
             <input type="text" id="title" name="title" required />
@@ -60,6 +60,7 @@ export const NewNote = ({addNote}) => {
         <button> Send Note </button>
         {sending ? <p>Sending Note</p> : null}
         {error ? <p> {error} </p> : null}
+            
     </form>
     );
 };

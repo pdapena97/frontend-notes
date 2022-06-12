@@ -26,21 +26,46 @@ export const HomePage = () => {
         <div className={show ? "popup-box show" : "popup-box" }>
             <div className="popup">
                 <div className="content">
+
                     <header>
                       <p> Add new Note</p>
                       <i onClick={() => setShow(false)} className="uil uil-times"></i>
                     </header>
+
                     <form action="#">
                       <div className="row title">
-                        <label>Title</label>
-                        <input type="text" spellCheck="false" />
+                        <label htmlFor="title">Title</label>
+                        <input type="text" id="title" name="title" spellCheck="false" required/>
                       </div>
+
                       <div className="row description">
-                        <label>Description</label>
+                        <label htmlFor="text">Description</label>
                         <textarea spellCheck="false"></textarea>
                       </div>
-                      <button> Add Note</button>
+
+                      <div className="row category">
+                        <label>Category</label>
+                        <input type="text" id="category" name="category" value="category" />
+                      </div>
+
+                      <div className="row image">
+                        <label>Image (optional)</label>
+                        <input type="file" id="image" name="image" accept="image/*"/>
+                        
+                      </div>
+                      <div className="toggle-radio">
+                        <input type="radio" id="yes" name="privacy" value="yes"/>
+                        <input type="radio" id="no" name="privacy" value="no" defaultChecked/>
+                        <div className="switch"> 
+                            <label htmlFor="yes">yes</label>
+                            <label htmlFor="no">no</label>
+                            <span></span>
+                        </div>
+                        
+                      </div>
+                      <button> Add Note </button>
                     </form>
+                    
                 </div>
             </div>
         </div>
