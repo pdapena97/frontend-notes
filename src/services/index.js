@@ -1,17 +1,17 @@
 
+// deberia no poder el token. en la homepage todas las publicas.
+// luego un apartado por si el usuario quiere ver las suyas.
+// hacer un backend que no puda autentificacion + notas publicas
 export const getAllNotesService = async (token) => {
 
-    const response = await fetch("http://localhost:4000/notes/7", {
-        headers: {
-            Authorization: token,
-        },});   
+    const response = await fetch("http://localhost:4000/publicnotes");   
         //Problema con el process.env
         //console.log(token); 
     
     // NO LE LLEGA EL TOKEN
 
     const json = await response.json();
-    console.log(json);
+    //console.log(json);
     
 
     if (!response.ok) {
@@ -24,11 +24,16 @@ export const getAllNotesService = async (token) => {
 
 // cuidao aqui con la url del fetch
 
-export const getUserNotesService = async (id) => {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND}/notes/${id}`);
-    console.log(response);
+export const getUserNotesService = async (id, token) => {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND}/notes/${id}`, {
+        headers: {
+            Authorization: token,
+        },
+    });
+    //console.log(response);
+    //console.log(token);
     const json = await response.json();
-    console.log(json);
+    //console.log(json);
     
 
     if (!response.ok) {
@@ -106,7 +111,7 @@ export const getMyUserDataService = async ({token}) => {
     });
     
     const json = await response.json();
-    console.log(json);
+    //console.log(json);
 
     if (!response.ok) {
         throw new Error(json.message);
@@ -167,3 +172,12 @@ export const deleteNoteService = async ({id, token}) => {
         throw new Error(json.message);
     }
 };
+
+
+// editar nota texto imagen titulo
+
+//export const editNote
+
+// editar categoria notas 
+
+// editar privacidad notas

@@ -17,8 +17,8 @@ const useNotes = (id) => {
                 setLoading(true);
                 
                 const data = id 
-                    ? await getUserNotesService(id) 
-                    : await getAllNotesService(token);   //aqui error. Falta el token.
+                    ? await getUserNotesService(id,token) 
+                    : await getAllNotesService(token);   
 
                 setNotes(data);
 

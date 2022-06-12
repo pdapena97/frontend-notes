@@ -24,22 +24,24 @@ export const Note = ({note, removeNote}) => {
     };
 
     return (
-        <article>
-            <p> {note.title} </p>
-            <p> {note.text} </p>
+        <>
+            <div className="details"> 
+             <p> {note.title} </p>
+             <p> {note.category} </p>
+             <span> {note.text} </span>
 
-            {note.image ? (
-            <img src={`${process.env.REACT_APP_BACKEND}/uploads/${note.image}`} 
-            alt={note.text}/>
-            ) : null}
+             {note.image ? (
+             <img src={`${process.env.REACT_APP_BACKEND}/uploads/${note.image}`} 
+             alt={note.text} width='200px'/>
+             ) : null}
 
-            <p> 
+             <span> 
                 By <Link to={`/user/${note.user_id}`}> {note.email} </Link> on {" "}
 
                 <Link to={`note/${note.id}`}></Link>
-            </p>
+             </span>
                 
-            {user && user.id === note.user_id ? (
+             {user && user.id === note.user_id ? (
                 <section>
                     <button onClick={() => {
                         if (window.confirm("Are you sure")) deleteNote(note.id);
@@ -47,6 +49,17 @@ export const Note = ({note, removeNote}) => {
                     {error ? <p>{error}</p> : null}
                 </section> 
                )  : null}
-        </article>
+            </div>
+            <div className="bottom-content">
+                <span> April 3, 2022</span>
+                <div className="settings">
+                    <i className="uil uil-ellipsis-h"></i>
+                    <ul className="menu">
+                        <li><i className="uil uil-pen">Edit</i></li>
+                        <li><i className="uil uil-trash">Delete</i></li>
+                    </ul>
+                </div>
+            </div>
+        </>
     );
 };
