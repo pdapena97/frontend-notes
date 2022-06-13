@@ -28,25 +28,23 @@ export const Note = ({note, removeNote}) => {
     return (
         <>
             <div className="details"> 
-             <p> {note.title} </p>
+             <p className="note-title"> {note.title} </p>
+             
+
+             {note.image && note.image !== "undefined"? (   
+             <img 
+             src={`${process.env.REACT_APP_BACKEND}/uploads/${note.image}`} 
+             alt={"alt text"} 
+             />
+             ) : 
+             null}
+
              <p> {note.category} </p>
-             <span> {note.text} </span>
-
-             {note.image ? (
-             <img src={`${process.env.REACT_APP_BACKEND}/uploads/${note.image}`} 
-             alt={note.text} width='200px'/>
-             ) : null}
-
-             <span> 
-                By <Link to={`/user/${note.user_id}`}> {note.email} </Link> on {" "}
-
-                <Link to={`note/${note.id}`}></Link>
-             </span>
-                
-            
+             <span> {note.text} </span>               
+           
             </div>
             <div className="bottom-content">
-                <span> April 3, 2022</span>
+                <span> By <Link to={`/user/${note.user_id}`} className="note-user-link"> {note.user_id} </Link> on {new Date(user.created_at).toLocaleString()}</span>
                 
                 {user && user.id === note.user_id ? (
                 <div className={showMenu? "settings showMenu" : "settings"}>

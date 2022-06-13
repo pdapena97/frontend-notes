@@ -19,9 +19,9 @@ export const UserPage = () => {
 
     return token ? (
     <section>
-        <h1> User {user.email} </h1>
-        <p> User id: {user.id} </p>
-        <p> Registed on: {new Date(user.created_at).toLocaleString()}</p>
+        <h1> User: {user.email} </h1>
+        <p className="user-page-p"> User id: {user.id} </p>
+        <p className="user-page-p"> Registed on: {new Date(user.created_at).toLocaleString()}</p>
 
         <UserNotes id={user.id} />
     </section>

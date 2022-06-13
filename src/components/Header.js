@@ -2,7 +2,7 @@ import { Auth } from "./Auth";
 import { Link } from "react-router-dom";
 //import {TbLetterN} from "react-icons/tb"
 import {GoNote} from "react-icons/go";
-import { Navigate } from "react-router-dom";
+
 
 export const Header = () => {
     return (

@@ -21,7 +21,7 @@ export const Auth = () => {
         <span onClick={() => {
             setShowForm(false);
              if (window.confirm("Are you sure you want to logout?")) logout()}} className="logout">
-            <MdPowerSettingsNew className="logout-icon" size="2.5em" color="white" />
+            <MdPowerSettingsNew className="logout-icon" size="2.5em" />
         </span>
         
         </>
@@ -35,8 +35,9 @@ export const Auth = () => {
        : null}
 
        {showForm ? 
-       <ImCross onClick={() => setShowForm(false)} className="form-cross" color="red"/>
+       <ImCross onClick={() => setShowForm(false)} className="form-cross" />
        : null }
+
 
        <RegisterLoginForm showForm={showForm}/>
      

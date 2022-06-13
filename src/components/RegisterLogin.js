@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 
+
 import { loginUserService, registerUserService } from "../services";
 
 
 export const RegisterLoginForm = ({showForm}) => {
 
-    
+        
     const [formChange, setFormChange] = useState(false);
 
     const [email, setEmail] = useState('');
@@ -16,7 +17,7 @@ export const RegisterLoginForm = ({showForm}) => {
     const [pass2, setPass2] = useState('');
     const [error, setError] = useState('');
 
-   
+    
 
     const handleRegisterForm = async (e) => {
         e.preventDefault();
