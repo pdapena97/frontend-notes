@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { RegisterLoginForm } from "../components/RegisterLogin";
 import { registerUserService } from "../services";
 
 export const RegisterPage = () => {
@@ -33,6 +34,8 @@ export const RegisterPage = () => {
     };
 
     return (
+        <>
+        <RegisterLoginForm />
         <section>
             <h1> Register </h1>
             <form onSubmit={handleForm}>
@@ -53,5 +56,6 @@ export const RegisterPage = () => {
                 {error ? <p>{error} </p> : null}
             </form>
         </section>
+        </>
     );
 };

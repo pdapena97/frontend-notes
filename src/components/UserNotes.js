@@ -1,6 +1,6 @@
 import useNotes from "../hooks/useNotes";
 import { ErrorMessage } from "./ErrorMessage";
-import { NoteList } from "./NotesList";
+import { UserNoteList } from "./NotesList";
 
 export const UserNotes = ({id}) => {
     const {notes, loading, error, removeNote} = useNotes(id);
@@ -8,5 +8,5 @@ export const UserNotes = ({id}) => {
     if (loading) return <p> Loading notes...</p>;
     if (error) return <ErrorMessage message={error} />;
 
-    return <NoteList notes={notes} removeNote={removeNote} />
+    return <UserNoteList notes={notes} removeNote={removeNote} />
 };

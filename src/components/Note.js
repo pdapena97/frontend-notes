@@ -6,6 +6,7 @@ import { deleteNoteService } from "../services";
 export const Note = ({note, removeNote}) => {
     const {user, token} = useContext(AuthContext);
     const [error, setError] = useState("");
+    const [showMenu, setShowMenu] = useState(false);
     const navigate = useNavigate();
 
     const deleteNote = async(id) => {
@@ -22,6 +23,7 @@ export const Note = ({note, removeNote}) => {
             setError(error.message);
         }
     };
+
 
     return (
         <>
@@ -41,24 +43,26 @@ export const Note = ({note, removeNote}) => {
                 <Link to={`note/${note.id}`}></Link>
              </span>
                 
-             {user && user.id === note.user_id ? (
-                <section>
-                    <button onClick={() => {
-                        if (window.confirm("Are you sure")) deleteNote(note.id);
-                        }}> Delete Note </button> 
-                    {error ? <p>{error}</p> : null}
-                </section> 
-               )  : null}
+            
             </div>
             <div className="bottom-content">
                 <span> April 3, 2022</span>
-                <div className="settings">
-                    <i className="uil uil-ellipsis-h"></i>
+                
+                {user && user.id === note.user_id ? (
+                <div className={showMenu? "settings showMenu" : "settings"}>
+                    <i onClick={() =>  
+                    setShowMenu(true) }
+                        
+                    className="uil uil-ellipsis-h"></i>
                     <ul className="menu">
                         <li><i className="uil uil-pen">Edit</i></li>
-                        <li><i className="uil uil-trash">Delete</i></li>
-                    </ul>
+                        <li><i onClick={() => {
+                            if (window.confirm("Are you sure")) deleteNote(note.id);
+                            }} className="uil uil-trash">Delete</i></li>
+                            
+                    </ul>   
                 </div>
+                ) : null }
             </div>
         </>
     );

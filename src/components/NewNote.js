@@ -15,6 +15,7 @@ export const NewNote = ({addNote}) => {
             setSending(true);
 
             const data = new FormData(e.target);
+            console.log(data);
             const note = await sendNoteService(data, token);
             console.log(note);
 
@@ -30,6 +31,7 @@ export const NewNote = ({addNote}) => {
     };
 
     return (
+        
     <form onSubmit={handleForm}>
         <h1> Notes List</h1>
         
@@ -62,5 +64,6 @@ export const NewNote = ({addNote}) => {
         {error ? <p> {error} </p> : null}
             
     </form>
+            
     );
 };
