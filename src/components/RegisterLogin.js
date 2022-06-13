@@ -101,7 +101,7 @@ export const RegisterLoginForm = ({showForm}) => {
 
               <form onSubmit={handleRegisterForm} className="signup">
                  <div className="field">
-                    <input type="text" id="email" name="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" required />
+                    <input type="text" id="registeremail" name="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" required />
                  </div>
                  <div className="field">
                     <input type="password" id="pass1" name="pass1" onChange={(e) => setPass1(e.target.value)} placeholder="Password" required />

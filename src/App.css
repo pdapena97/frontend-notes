@@ -598,3 +598,9 @@ header {
     cursor: pointer;
     border: none;
 }
+
+/* */
+
+h1 {
+    color: white;
+}
