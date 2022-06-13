@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import { ImCross } from "react-icons/im";
+
 
 import { loginUserService, registerUserService } from "../services";
 
@@ -58,11 +58,9 @@ export const RegisterLoginForm = ({showForm}) => {
         }
     }
 
-
-
-    return (
-   <div className={showForm ? "form-main show-form-main" : "form-main"}>     
-    <div className="loginregisterwrapper">
+    return (     
+    <div className={showForm ? "form-main show-form-main" : "form-main"}>
+      <div className="loginregisterwrapper"> 
         <div className="title-text">
            <div className={formChange ? "title login form-change" : "title login"}>
               Login
@@ -119,6 +117,7 @@ export const RegisterLoginForm = ({showForm}) => {
               </form>
            </div>
         </div>
+      </div>  
      </div>
-    </div>
+    
 )};

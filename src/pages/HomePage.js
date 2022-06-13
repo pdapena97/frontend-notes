@@ -96,7 +96,7 @@ export const HomePage = () => {
                         </div>
                         
                       </div>
-                      <button> Add Note </button>
+                      <button onClick={()=> setShow(false)}> Add Note </button>
                       {sending ? <p>Sending Note</p> : null}
                       {/*{error ? <p> {error} </p> : null}*/}
                     </form>

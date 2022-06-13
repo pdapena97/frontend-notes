@@ -9,7 +9,7 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
-  background: #2d2e4b;
+  background: #001935;
 }
 ::selection{
     color: #fff;
@@ -148,8 +148,8 @@ a {
     align-items: center;
     background-color: rgb(243, 241, 237);
     border-radius: 10px;
-    padding: 5px;
-    margin-bottom: 1.5em;
+    padding: 5px 10px 5px 10px;
+    margin: 0.5em 1.2em 1em 1.2em;
 }
 
 .search input {
@@ -187,7 +187,7 @@ a {
 .popup-box, .popup-box .popup {
     opacity: 0;
     pointer-events: none;
-    transition: all 0.5s ease;
+    transition: all 0.8s ease-in-out;
 }
 
 .popup-box.show, .popup-box.show .popup {
@@ -542,11 +542,30 @@ footer {
 
   /* CSS DEL POP UP DEL FORMULARIO DE REGISTRO Y LOGIN */
 
-  .form-main {
-      display: none;
-  }
+.form-main {
+    display: none;
+}
 
-  .show-form-main{
-      display:inline;
-  }
-  
+.show-form-main{
+    display:inline;
+}
+
+ 
+/* CSS del Header */
+header {
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.header-login {
+    color: rgb(0, 0, 0);
+    background-color: #00cf35;
+    margin-right: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 6px 15px;
+    cursor: pointer;
+    border: none;
+}
