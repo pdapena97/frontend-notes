@@ -22,18 +22,45 @@ a {
     text-decoration: none;
 }
 
-.wrapper {
-    margin: 30px 20px 20px 10px;
-    display: grid;
-    gap: 25px;
-    grid-template-columns: repeat(auto-fill, 265px);
+a.home-link {
+    padding: 10px 0px 0px 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.wrapper li{
+span.logout {
+    padding-right: 18px;
+    padding-top: 8px;
+}
+
+span.userpagelink-span {
+    align-items: center;
+    justify-content: center;
+    padding-top: 16px;
+}
+
+nav {
+    display: flex;
+}
+
+a.userpage-link {
+    padding: 0px 7px 0px 5px;
+    color:lightgray
+    
+}
+
+.wrapper {
+    margin: 20px 20px 20px 20px;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill, 1fr);
+}
+
+.wrapper li {
     height: 250px;
     list-style: none;
     border-radius: 5px;
-    padding: 15px 20px 20px;
+    padding: 15px 20px 20px ;
     background: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   }
@@ -61,10 +88,10 @@ a {
     border: 2px dashed rgb(243, 241, 237);
 }
 
-.add-box p{
+.add-box p {
     color: rgb(180, 180, 180);
     font-weight: 500;
-    margin-top: 20px;
+    margin-top: 6px;
 }
 
 .wrapper .note {
@@ -74,7 +101,7 @@ a {
 }
 
 .note p {
-    font-size: 22px;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -82,7 +109,7 @@ a {
     display: block;
     margin-top: 5px;
     color: #575757;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .note .bottom-content{
@@ -197,9 +224,10 @@ a {
 
 
 .popup .content{
-    width: calc(100% - 15px);
+    width: calc(100% - 50px);
     background: #fff;
     border-radius: 5px;
+    
 }
 
 .popup .content header {
@@ -555,6 +583,7 @@ footer {
 header {
     padding-bottom: 10px;
     padding-top: 5px;
+    vertical-align: middle;
 }
 
 .header-login {
@@ -562,10 +591,10 @@ header {
     background-color: #00cf35;
     margin-right: 20px;
     border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 0.9rem;
+    font-weight: 600;
     line-height: 1.5;
-    padding: 6px 15px;
+    padding: 6px 20px;
     cursor: pointer;
     border: none;
 }

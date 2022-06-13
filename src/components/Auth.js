@@ -15,15 +15,15 @@ export const Auth = () => {
     return user 
         ? (
         <>
-        <p> 
-        <Link to={`/user/${user.id}`}> {user.email} </Link> {""}
-
+        <span className="userpagelink-span"> 
+        <Link to={`/user/${user.id}`} className="userpage-link"> {user.email} </Link> {""}
+        </span>    
         <span onClick={() => {
             setShowForm(false);
              if (window.confirm("Are you sure you want to logout?")) logout()}} className="logout">
-            <MdPowerSettingsNew className="logout-icon" size="2em" color="white" />
+            <MdPowerSettingsNew className="logout-icon" size="2.5em" color="white" />
         </span>
-        </p>
+        
         </>
        ) 
 

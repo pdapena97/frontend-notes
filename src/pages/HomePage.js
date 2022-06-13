@@ -115,9 +115,9 @@ export const HomePage = () => {
          </li> : null }
 
          {error ? <NewNote addNote={addNote}/> : null}
-                          
-         <PublicNoteList notes={notes.filter((note) => note.text.toLowerCase().includes(searchText.toLocaleLowerCase()))}
-         removeNote={removeNote}  />
+         <>             
+         <PublicNoteList notes={notes.filter((note) => note.text.toLowerCase().includes(searchText.toLocaleLowerCase()))} removeNote={removeNote}  /> 
+         </>
 
         </section>
     );
