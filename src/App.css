@@ -266,7 +266,7 @@ form .row label {
 
 
 
-/* CSS DEL RADIO BUTTON */
+/* CSS DEL RADIO BUTTON DE NEW NOTE */
 .switch {
   position: absolute;
   top:57%;
@@ -538,3 +538,15 @@ footer {
     font-weight: 500;
     cursor: pointer;
   }
+
+
+  /* CSS DEL POP UP DEL FORMULARIO DE REGISTRO Y LOGIN */
+
+  .form-main {
+      display: none;
+  }
+
+  .show-form-main{
+      display:inline;
+  }
+  

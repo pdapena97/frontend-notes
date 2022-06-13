@@ -104,11 +104,15 @@ export const HomePage = () => {
                 </div>
             </div>
         </div>
-         <Search handleSearchNote={setSearchText} />                    
+
+         <Search handleSearchNote={setSearchText} />    
+
+
+         {user ? 
          <li className="add-box" onClick={() => setShow(true)}>
             <div className="icon"><i className="uil uil-plus"></i></div>
             <p>Add new note</p>
-         </li> 
+         </li> : null }
 
          {error ? <NewNote addNote={addNote}/> : null}
                           

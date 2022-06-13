@@ -38,7 +38,6 @@ export const AuthProviderComponent = ({children}) => {
     // nah, creo que si, pero luego se hace un logout.
     const login = (token) => {
         setToken(token);
-        console.log(token);
     };
 
 
@@ -47,7 +46,7 @@ export const AuthProviderComponent = ({children}) => {
         setUser(null);
     }
 
-    
+  
     return (
         <AuthContext.Provider value={{token, user, login, logout }}>
          {children} 

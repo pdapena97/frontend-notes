@@ -1,16 +1,67 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+import { ImCross } from "react-icons/im";
+
+import { loginUserService, registerUserService } from "../services";
 
 
-export const RegisterLoginForm = () => {
+export const RegisterLoginForm = ({showForm}) => {
 
     
     const [formChange, setFormChange] = useState(false);
 
+    const [email, setEmail] = useState('');
+    const [pass1, setPass1] = useState('');
+    const [pass2, setPass2] = useState('');
+    const [error, setError] = useState('');
+
+   
+
+    const handleRegisterForm = async (e) => {
+        e.preventDefault();
+        setError("");
+
+        if (pass1 !== pass2) {
+            setError("Passwords do not match");
+            return;
+        }
+
+        try {
+            await registerUserService({email, password: pass1})
+
+            setFormChange(true);
+
+        } catch(error) {
+            setError(error.message);
+            
+        }
+
+    };
+
+    const [password, setPassword] = useState("");
+    const {login} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLoginForm = async (e) => {
+        e.preventDefault();
+        setError("");
+
+        try {
+            const data = await loginUserService({email, password});
+            console.log(data.token);  //Vale aqui llega algo ya
+            login(data.token);
+            navigate("/");
+        } catch (error) {
+            setError(error.message);
+
+        }
+    }
 
 
 
     return (
-   <div className="form-main">     
+   <div className={showForm ? "form-main show-form-main" : "form-main"}>     
     <div className="loginregisterwrapper">
         <div className="title-text">
            <div className={formChange ? "title login form-change" : "title login"}>
@@ -29,12 +80,14 @@ export const RegisterLoginForm = () => {
               <div className="slider-tab"></div>
            </div>
            <div className="form-inner">
-              <form action="#" className={formChange ? "login form-change" : "login"}>
+
+              <form onSubmit={handleLoginForm} 
+              className={formChange ? "login form-change" : "login"}>
                  <div className="field">
-                    <input type="text" placeholder="Email Address" required />
+                    <input type="text" id="email" name="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
                  </div>
                  <div className="field">
-                    <input type="password" placeholder="Password" required />
+                    <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
                  </div>
                  <div className="pass-link">
                     <a href="#">Forgot password? (soon)</a>
@@ -47,20 +100,22 @@ export const RegisterLoginForm = () => {
                     Not a member? <span onClick={() => setFormChange(true)} className="signup-now"> Signup now </span>
                  </div>
               </form>
-              <form action="#" className="signup">
+
+              <form onSubmit={handleRegisterForm} className="signup">
                  <div className="field">
-                    <input type="text" placeholder="Email Address" required />
+                    <input type="text" id="email" name="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" required />
                  </div>
                  <div className="field">
-                    <input type="password" placeholder="Password" required />
+                    <input type="password" id="pass1" name="pass1" onChange={(e) => setPass1(e.target.value)} placeholder="Password" required />
                  </div>
                  <div className="field">
-                    <input type="password" placeholder="Confirm password" required />
+                    <input type="password" id="pass2" name="pass2" onChange={(e) => setPass2(e.target.value)} placeholder="Confirm password" required />
                  </div>
                  <div className="field btn">
                     <div className="btn-layer"></div>
                     <input type="submit" value="Signup" />
                  </div>
+                 {error ? <p>{error}</p> : null }
               </form>
            </div>
         </div>
