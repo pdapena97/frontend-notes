@@ -17,7 +17,10 @@ body{
 }
 
 p.user-page-p {
-    color: white;
+    color: rgba(255, 255, 255, 0.877);
+    text-align: center;
+    font-size: 0.9rem;
+    padding-top: 5px;
 }
 
 
@@ -59,7 +62,7 @@ a.userpage-link {
 .wrapper {
     margin: 20px 0px 20px 0px;
     display: grid;
-    gap: 25px;
+    gap: 0px;
     grid-template-columns: repeat(auto-fill, 1fr);
 }
 
@@ -81,6 +84,7 @@ a.userpage-link {
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
+    padding-top: 10px;
 }
 
 .add-box .icon {
@@ -132,14 +136,15 @@ a.userpage-link {
 .note .bottom-content{
     border-bottom: 1px solid rgb(63, 52, 52);
     padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 20px;
-    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 70px;
+    padding-bottom: 15px;
 }
 
 .bottom-content span {
     color: #ffffff;
     font-size: 15px; 
+
 }
 
 .bottom-content .settings i{
@@ -193,8 +198,12 @@ a.userpage-link {
 @media screen and (max-width: 700px) {
 
     .note span {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: lightgray;
+    }
+
+    span.text-from-note {
+      font-size: 0.9rem;
     }
     
     img {
@@ -207,13 +216,14 @@ a.userpage-link {
         text-align: center;
         display: block;
         font-size: 1.2rem;
-       
+       padding-top: 10px;
         font-weight: 100; 
     }
 
     .details {
         display: grid;
-        grid-template-rows: max-content
+        grid-template-rows: max-content;
+        border-top: 1px solid rgb(63, 52, 52);
     }
 }
 
@@ -222,19 +232,27 @@ a.userpage-link {
 .search {
     display: flex;
     align-items: center;
-    background-color: rgb(243, 241, 237);
+    background-color: rgba(243, 241, 237, 0.007);
     border-radius: 10px;
-    padding: 5px 10px 5px 10px;
-    margin: 0.5em 1.2em 1em 1.2em;
+    padding: 0px 10px 5px 10px;
+    margin: 0em 1.2em 1em 1.2em;
 }
 
 .search input {
     border: none;
-    background-color: rgb(243, 241, 237);
-}
+    border-radius: 10px;
+    background-color:rgba(243, 241, 237, 0.055);
+    color: white;
+    padding-left: 8px;
+    width: 315px;
+}    
 
 .search input:focus{
     outline: none;
+}
+
+.search-icons {
+  color: #a4e0d6f8;
 }
 
 /* CSS DEL POP UP NEW NOTE */
@@ -670,7 +688,6 @@ main {
 /* CSS del Header */
 header {
     overflow: hidden;
-    padding-bottom: 10px;
     padding-top: 5px;
     vertical-align: middle;
     width: 100%;
@@ -679,7 +696,6 @@ header {
 
 .main-header {
   background-color: #000;
-  
 }
 
 div.search {
@@ -718,6 +734,9 @@ div.search {
 
 h1 {
     color: white;
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .container {
