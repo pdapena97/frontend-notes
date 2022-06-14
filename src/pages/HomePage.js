@@ -83,7 +83,7 @@ export const HomePage = () => {
                         <label>Image (optional)</label>
                         <input type="file" id="image" name="image" accept="image/*" onChange={(e) => setImage(e.target.files[0])}/>
                         {image ? <figure> 
-                            <img src={URL.createObjectURL(image)} alt="Preview" style={{width: '100px'}} /></figure> : null}
+                            <img className="image-preview" src={URL.createObjectURL(image)} alt="Preview" style={{width: '100px'}} /></figure> : null}
                       
                       </div>
                       <div className="toggle-radio">
