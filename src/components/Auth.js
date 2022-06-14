@@ -4,6 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 import { MdPowerSettingsNew } from "react-icons/md";
 import { RegisterLoginForm } from "./RegisterLogin";
 import { ImCross } from "react-icons/im";
+import {BsPerson} from "react-icons/bs";
 
 
 export const Auth = () => {
@@ -15,9 +16,10 @@ export const Auth = () => {
     return user 
         ? (
         <>
-        <span className="userpagelink-span"> 
-        <Link to={`/user/${user.id}`} className="userpage-link"> {user.email} </Link> {""}
-        </span>    
+        <span className="avatar-link">
+        <Link to={`/user/${user.id}`} className="userpage-link">  <BsPerson className="bsperson"  size="2.4rem" /></Link> {""}    
+        </span>
+        
         <span onClick={() => {
             setShowForm(false);
              if (window.confirm("Are you sure you want to logout?")) logout()}} className="logout">

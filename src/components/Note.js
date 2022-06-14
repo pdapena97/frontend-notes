@@ -44,7 +44,7 @@ export const Note = ({note, removeNote}) => {
            
             </div>
             <div className="bottom-content">
-                <span> By <Link to={`/user/${note.user_id}`} className="note-user-link"> {note.user_id} </Link> on {new Date(user.created_at).toLocaleString()}</span>
+                <span> By <Link to={`/user/${note.user_id}`} className="note-user-link"> {note.user_id} </Link> on {new Date(note.created_at).toLocaleString()}</span>
                 
                 {user && user.id === note.user_id ? (
                 <div className={showMenu? "settings showMenu" : "settings"}>
