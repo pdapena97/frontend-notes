@@ -57,7 +57,6 @@ export const Note = ({note, removeNote}) => {
                         <li><i onClick={() => {
                             if (window.confirm("Are you sure")) deleteNote(note.id);
                             }} className="uil uil-trash">Delete</i></li>
-                            
                     </ul>   
                 </div>
                 ) : null }

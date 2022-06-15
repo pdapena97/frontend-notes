@@ -50,7 +50,7 @@ export const RegisterLoginForm = ({showForm}) => {
 
         try {
             const data = await loginUserService({email, password});
-            console.log(data.token);  //Vale aqui llega algo ya
+        
             login(data.token);
             navigate("/");
         } catch (error) {
@@ -80,7 +80,7 @@ export const RegisterLoginForm = ({showForm}) => {
            </div>
            <div className="form-inner">
 
-              <form onSubmit={handleLoginForm} 
+               <form onSubmit={handleLoginForm} 
               className={formChange ? "login form-change" : "login"}>
                  <div className="field">
                     <input type="text" id="email" name="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
@@ -96,9 +96,11 @@ export const RegisterLoginForm = ({showForm}) => {
                     <input type="submit" value="Login" />
                  </div>
                  <div className="signup-link">
+                    {error ? <p className="error-p"> {error} </p> : null}
                     Not a member? <span onClick={() => setFormChange(true)} className="signup-now"> Signup now </span>
                  </div>
-              </form>
+                 
+               </form>
 
               <form onSubmit={handleRegisterForm} className="signup">
                  <div className="field">
@@ -114,7 +116,7 @@ export const RegisterLoginForm = ({showForm}) => {
                     <div className="btn-layer"></div>
                     <input type="submit" value="Signup" />
                  </div>
-                 {error ? <p>{error}</p> : null }
+                 {error ? <p className="error-p">{error}</p> : null }
               </form>
            </div>
         </div>

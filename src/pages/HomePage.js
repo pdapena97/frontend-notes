@@ -6,6 +6,7 @@ import { Search } from "../components/Search";
 import { AuthContext } from "../context/AuthContext";
 import useNotes from "../hooks/useNotes";
 import { sendNoteService } from "../services";
+import {AiOutlineFileUnknown} from "react-icons/ai"
 
 export const HomePage = () => {
 
@@ -20,7 +21,7 @@ export const HomePage = () => {
     
 
     if(loading) return <p> cargando notas... </p>;
-    /*if (error) return <ErrorMessage message={error} />;*/
+    if (error) return <ErrorMessage message={error} />;
 
 
 
@@ -38,10 +39,13 @@ export const HomePage = () => {
             addNote(note);  //tamos aqui. error. 
             e.target.reset();
             setImage(null);
+          
 
         } catch (error) {
             setError(error.message);
-        } finally {
+            setShow(true);
+        
+          } finally {
             setSending(false);
         }
     };
@@ -80,13 +84,15 @@ export const HomePage = () => {
                       </div>
 
                       <div className="row image">
-                        <label>Image (optional)</label>
-                        <input type="file" id="image" name="image" accept="image/*" onChange={(e) => setImage(e.target.files[0])}/>
+                    
+                        <label htmlFor="image" className="label-image-newnote"><AiOutlineFileUnknown size="2rem" display="block"  className="aioutlinefile"/> Image (optional)</label>
+                        <input className="form-image-resize" type="file" id="image" name="image" accept="image/*" onChange={(e) => setImage(e.target.files[0])}/>
                         {image ? <figure> 
-                            <img className="image-preview" src={URL.createObjectURL(image)} alt="Preview" style={{width: '100px'}} /></figure> : null}
+                            <img className="image-preview" src={URL.createObjectURL(image)} alt="Preview"/></figure> : null}
                       
                       </div>
                       <div className="toggle-radio">
+                        <label className="label-note-public">  Is this note public? </label>
                         <input type="radio" id="yes" name="public" value="yes"/>
                         <input type="radio" id="no" name="public" value="no" defaultChecked/>
                         <div className="switch"> 
@@ -96,9 +102,9 @@ export const HomePage = () => {
                         </div>
                         
                       </div>
-                      <button onClick={()=> setShow(false)}> Add Note </button>
+                      <button onClick={()=> {error ? <p> {error} </p> : setShow(false)}}> Add Note </button>
+                      {error ? <p> {error} </p> : null}
                       {sending ? <p>Sending Note</p> : null}
-                      {/*{error ? <p> {error} </p> : null}*/}
                     </form>
 
                 </div>
