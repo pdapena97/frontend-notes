@@ -148,7 +148,7 @@ a.userpage-link {
 }
 
 .bottom-content .settings i{
-    color: #ffffff;
+    color: orange;
     width:75px;
     font-size: 15px;
     cursor: pointer;
@@ -798,3 +798,9 @@ div.row.image {
   padding-top: 5px;
   text-align: center;
 }
+p.userpagep {
+  color: orange;
+  padding-top: 10px;
+  text-align: center;
+}
+

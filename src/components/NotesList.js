@@ -2,15 +2,17 @@
 import { Note } from "./Note";
 
 
-// en realidad esto solo devuelve notas públicas.
+// en realidad las notas que vienen aqui ya son publicas
+// la prop del removeNote es innecesaria.
+
 export const PublicNoteList = ({notes, removeNote}) => {
-    return notes.length ? (
+    return (
         <ul className="wrapper">  
             {notes.map(note => note.public === "yes" ?
             <li className="note" key={note.id}> <Note note={note} removeNote={removeNote}/> 
             </li> : null)}
         </ul>
-    ) : (<p> No hay notas aún... </p>);
+    )  
 };
 
 

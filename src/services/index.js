@@ -20,12 +20,14 @@ export const getAllNotesService = async (token) => {
     //json.data ???
     return json.data;  
 
-}
+};
 
 // cuidao aqui con la url del fetch
 
-export const getUserNotesService = async (id, token) => {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND}/notes/${id}`, {
+
+export const getUserPublicNotesService = async (id,token) => {
+    
+    const response = await fetch(`${process.env.REACT_APP_BACKEND}/userpublicnotes/${id}`, {
         headers: {
             Authorization: token,
         },
@@ -41,7 +43,28 @@ export const getUserNotesService = async (id, token) => {
     }
 
     return json.data;
-}
+};
+
+
+
+export const getUserNotesService = async (id, token) => {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND}/notes/${id}`, {
+        headers: {
+            Authorization: token,
+        },
+    });
+    //console.log(response);
+    //console.log(token);
+    const json = await response.json();
+    
+    
+
+    if (!response.ok) {
+        throw new Error(json.message);
+    }
+
+    return json.data;
+};
 
 
 
@@ -98,7 +121,7 @@ export const loginUserService = async ({email, password}) => {
     }
 
     return json;
-}
+};
 
 // LA DE BERTO ES A /USER Y PUNTO. NADA DE ID. AHI ESTA EL PROBLEMA. BACKEND
 // SOLO REQUIERE EL TOKEN
@@ -155,7 +178,7 @@ export const sendNoteService = async (data, token) => {
 
     return json.data;
 
-}
+};
 
 
 export const deleteNoteService = async ({id, token}) => {
@@ -175,9 +198,18 @@ export const deleteNoteService = async ({id, token}) => {
 
 
 // editar nota texto imagen titulo
+export const editNoteService = async ({id, token}) => {
+    const response = await fetch (`${process.env.REACT_APP_BACKEND}/note/${id}`, {
+        method: "PUT",
+        headers: {
+            Authorization: token
+        }
+    });
 
-//export const editNote
+    const json = await response.json();
+    console.log(json);
 
-// editar categoria notas 
-
-// editar privacidad notas
+    if (!response.ok) {
+        throw new Error(json.message);
+    }
+};

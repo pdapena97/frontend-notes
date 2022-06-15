@@ -122,7 +122,7 @@ export const HomePage = () => {
 
   
          <>             
-         <PublicNoteList notes={notes.filter((note) => note.text.toLowerCase().includes(searchText.toLocaleLowerCase()))} removeNote={removeNote}  /> 
+         <PublicNoteList notes={notes.filter((note) => note.text.toLowerCase().includes(searchText.toLocaleLowerCase()))} removeNote={removeNote} /> 
          </>
 
         </section>
