@@ -5,7 +5,7 @@ import { PublicNoteList } from "./NotesList";
 
 export const UserPublicNotes = ({id}) => {
     const {notes, loading, error, removeNote} = usePublicNotes(id);
-    console.log(notes);
+    
 
     if (loading) return <p> Loading notes...</p>;
     if (error) return <ErrorMessage message={error} />;

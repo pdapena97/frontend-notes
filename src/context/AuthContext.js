@@ -1,15 +1,15 @@
 import { createContext, useEffect, useState } from "react";
+
 //import { useParams } from "react-router-dom";
 import { getMyUserDataService } from "../services";
 
 export const AuthContext = createContext();
 
-// NO SE GUARDA EL TOKEN EN EL LOCAL STORAGE POR ALGUN MOTIVO
 export const AuthProviderComponent = ({children}) => {
 
     const [token, setToken] = useState(localStorage.getItem("token"));
     const [user, setUser] = useState(null);
-    //const { id } = useParams();
+    
 
     useEffect(() => {
         localStorage.setItem("token", token);
@@ -21,10 +21,12 @@ export const AuthProviderComponent = ({children}) => {
         const getUserData = async() => {
             try {
                 
-                const data = await getMyUserDataService({token}) //aqui llega. pero error
+                const data = await getMyUserDataService({token}) 
+                
                 setUser(data);
             } catch(error) {
-                logout();    //hace logout, asi que borra el token.
+                logout()
+                   
 
             }
 
@@ -34,8 +36,7 @@ export const AuthProviderComponent = ({children}) => {
         if (token) getUserData()
     },[token])
 
-    // aqui llega el token, pero no se guarda en local storage? 
-    // nah, creo que si, pero luego se hace un logout.
+    
     const login = (token) => {
         setToken(token);
     };

@@ -11,7 +11,6 @@ const useUser = (id) => {
             try {
                 setLoading(true);
                 const data = await getUserDataService(id);
-                
                 setUser(data);
 
             } catch (error) {

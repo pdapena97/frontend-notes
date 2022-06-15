@@ -35,7 +35,7 @@ export const getUserPublicNotesService = async (id,token) => {
     //console.log(response);
     //console.log(token);
     const json = await response.json();
-    console.log(json);
+   
     
 
     if (!response.ok) {
@@ -114,7 +114,7 @@ export const loginUserService = async ({email, password}) => {
     });
     //console.log(response);
     const json = await response.json();
-    console.log(json);
+    
 
     if (!response.ok) {
         throw new Error(json.message);

@@ -1,27 +1,28 @@
-import { useContext } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { useContext, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { ErrorMessage } from "../components/ErrorMessage";
-import { PublicNoteList } from "../components/NotesList";
 import { UserNotes } from "../components/UserNotes";
 import { UserPublicNotes } from "../components/UserPublicNotes";
 import { AuthContext } from "../context/AuthContext";
 import useUser from "../hooks/useUser";
 
+
+
 export const UserPage = () => {
     const {id} = useParams();
+    const navigate = useNavigate()
 
-    const {user, loading, error} = useUser(id);
-
-    // en teoria sobra esto
-    const {token} = useContext(AuthContext);
+    const { user , loading, error} = useUser(id);
+    const { token } = useContext(AuthContext);
+    
 
     if (loading) return <p> loading user data...</p>
     if (error) return <ErrorMessage message={error}/>
+    
 
-    console.log (user.id, id);
-
-    // en teoria la logica es diferente
-    if (token && user.id == id) {
+    if (token) {
+     // en teoria la logica es diferente
+    if (user.id == id) {
         return (
             <section>
         
@@ -30,7 +31,8 @@ export const UserPage = () => {
              <p className="user-page-p"> Registed on: {new Date(user.created_at).toLocaleString()}</p>
              <p className="userpagep"> These are all you notes </p>
    
-             <UserNotes id={user.id} />
+             <UserNotes id={user.id} /> 
+             <UserPublicNotes id={id} />
              
    
            </section> )
@@ -40,6 +42,9 @@ export const UserPage = () => {
              <p className="userpagep"> These are the public notes from {id} </p>
 
              <UserPublicNotes id={id} />
-           </section> }  
+           </section> } } navigate("/") 
 };
 
+
+    // luego lo de params, el erorr..
+   

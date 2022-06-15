@@ -74,7 +74,9 @@ export const Note = ({note, removeNote}) => {
            
             </div>
             <div className="bottom-content">
-                <span className="by-date-span"> By <Link to={`/user/${note.user_id}`} className="note-user-link"> {note.user_id} </Link> on {new Date(note.created_at).toLocaleString()}</span>
+                {token ? 
+            <span className="by-date-span"> By <Link to={`/user/${note.user_id}`} className="note-user-link"> {note.user_id} </Link> on {new Date(note.created_at).toLocaleString()}</span> :
+                <span className="by-date-span"> By {note.user_id} on {new Date(note.created_at).toLocaleString()} </span> }
                 
                 {user && user.id === note.user_id ? (
                 <div className={showMenu? "settings showMenu" : "settings"}>
