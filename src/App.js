@@ -11,6 +11,7 @@ import { RegisterPage } from './pages/RegisterPage';
 import { NotePage } from './pages/NotePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { UserPage } from './pages/UserPage';
+import { LoadingScreen } from './components/LoadingScreen';
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/note/:id' element={<NotePage />} />
         <Route path='*' element={<NotFoundPage />} />
         <Route path='/user/:id' element={<UserPage />} />
+        <Route path='/prueba' element={<LoadingScreen />} />
       </Routes>
       <Footer/>
     </main>

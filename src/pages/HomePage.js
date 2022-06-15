@@ -23,7 +23,7 @@ export const HomePage = () => {
     if(loading) return <p> cargando notas... </p>;
     if (error) return <ErrorMessage message={error} />;
 
-
+    
 
 
     const handleForm = async (e) => {

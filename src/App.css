@@ -436,9 +436,7 @@ label[for=yes] {
 
   height: 20px;
 }
-label[for=no] {
 
-}
 #no:checked ~ .switch {
   background: #eb4f37;
 }
@@ -804,3 +802,7 @@ p.userpagep {
   text-align: center;
 }
 
+div.loading-hola {
+  color: white;
+  text-align: center;
+}

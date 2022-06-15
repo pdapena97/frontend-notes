@@ -22,7 +22,7 @@ export const UserPage = () => {
 
     if (token) {
      // en teoria la logica es diferente
-    if (user.id == id) {
+    if (user.id === Number(id)) {
         return (
             <section>
         
