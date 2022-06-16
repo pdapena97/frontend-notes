@@ -7,6 +7,7 @@ import { AuthContext } from "../context/AuthContext";
 import useNotes from "../hooks/useNotes";
 import { sendNoteService } from "../services";
 import {AiOutlineFileUnknown} from "react-icons/ai"
+import { LoadingScreen } from "../components/LoadingScreen";
 
 export const HomePage = () => {
 
@@ -23,7 +24,7 @@ export const HomePage = () => {
     if(loading) return <p> cargando notas... </p>;
     if (error) return <ErrorMessage message={error} />;
 
-    
+
 
 
     const handleForm = async (e) => {
@@ -121,7 +122,8 @@ export const HomePage = () => {
          </li> : null }
 
   
-         <>             
+         <>   
+                   
          <PublicNoteList notes={notes.filter((note) => note.text.toLowerCase().includes(searchText.toLocaleLowerCase()))} removeNote={removeNote} /> 
          </>
 

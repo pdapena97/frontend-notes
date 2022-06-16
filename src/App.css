@@ -802,7 +802,27 @@ p.userpagep {
   text-align: center;
 }
 
-div.loading-hola {
-  color: white;
-  text-align: center;
+
+
+
+
+
+div.loading-text {
+  color: orange;
+  font-size: 0.9em;
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.css-1nzyqsx{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 44%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }

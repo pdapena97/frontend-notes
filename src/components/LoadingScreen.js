@@ -1,18 +1,29 @@
-import { useEffect, useState } from "react"
 
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import DotLoader from "react-spinners/ClipLoader";
 
-export const LoadingScreen = () => {
+export const LoadingScreen = ( ) => {
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+ 
 
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
-            setLoading(false)
-        }, 3000)
+            setLoading(false);
+            navigate("/")
+        }, 1000)
     }, [])
+
     return (
-        <div className="loading-hola"> Hola 
-            { loading ? <div> Cargando </div> : <div> uh </div> }
+        <div > 
+            { loading ? 
+            <div >
+                <DotLoader className="loading-screen" width="10px" color="white"/>
+                <div className="loading-text"> Loading... </div>
+            </div> : 
+            <> </> }
         </div>
     )
 };

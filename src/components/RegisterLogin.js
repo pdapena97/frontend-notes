@@ -52,7 +52,7 @@ export const RegisterLoginForm = ({showForm}) => {
             const data = await loginUserService({email, password});
         
             login(data.token);
-            navigate("/");
+            navigate("/prueba");
         } catch (error) {
             setError(error.message);
 
