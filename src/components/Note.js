@@ -75,8 +75,8 @@ export const Note = ({note, removeNote}) => {
             </div>
             <div className="bottom-content">
                 {token ? 
-            <span className="by-date-span"> By <Link to={`/user/${note.user_id}`} className="note-user-link"> {note.user_id} </Link> on {new Date(note.created_at).toLocaleString()}</span> :
-                <span className="by-date-span"> By {note.user_id} on {new Date(note.created_at).toLocaleString()} </span> }
+                <span className="by-date-span"> By <Link to={`/user/${note.user_id}`} className="note-user-link"> {note.user_id} </Link> on {new Date(note.created_at).toLocaleString()}</span> 
+                : <span className="by-date-span"> By {note.user_id} on {new Date(note.created_at).toLocaleString()} </span> }
                 
                 {user && user.id === note.user_id ? (
                 <div className={showMenu? "settings showMenu" : "settings"}>
@@ -88,7 +88,7 @@ export const Note = ({note, removeNote}) => {
                         <li><i onClick={() => {
                             
                             <div className={show ? "popup-box show" : "popup-box" }>
-                            <div className="popup">
+                              <div className="popup">
                                 <div className="content">
                 
                                     <header>
@@ -135,22 +135,15 @@ export const Note = ({note, removeNote}) => {
                                       {error ? <p> {error} </p> : null}
                                       {sending ? <p>Sending Note</p> : null}
                                     </form>
-                
-                                </div>
-                            </div>
-                        </div>
-                                                  
-                            
-                            }}
-                            className="uil uil-pen">Edit</i></li>
-
-
-                            <li className="edit-delete-list"><i onClick={() => {
+                                 </div>
+                              </div>
+                          </div>}} className="uil uil-pen">Edit</i>
+                        </li>
+                        <li className="edit-delete-list"><i onClick={() => {
 
                             if (window.confirm("Are you sure")) deleteNote(note.id);
-                            }} 
-
-                            className="uil uil-trash">Delete</i></li>
+                            }} className="uil uil-trash">Delete</i>
+                        </li>
                     </ul>   
                 </div>
                 ) : null }
