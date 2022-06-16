@@ -13,15 +13,14 @@ export const LoadingScreen = ( ) => {
         setTimeout(() => {
             setLoading(false);
             navigate("/")
-        }, 1000)
+        }, 700)
     }, [navigate])
 
     return (
         <div > 
             { loading ? 
-            <div >
+            <div className="loading-text">
                 <DotLoader className="loading-screen" width="10px" color="white"/>
-                <div className="loading-text"> Loading... </div>
             </div> : 
             <> </> }
         </div>

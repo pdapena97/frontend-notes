@@ -321,8 +321,6 @@ a.userpage-link {
     color: lightgray;
   }
 
-  header.main-header {
-  }
 
   div.search {
     justify-content: center;
@@ -403,29 +401,31 @@ a.userpage-link {
 
 
 .popup .content{
-
+    box-shadow: 20px 30px 30px rgb(0 0 0 / 80%);
     width: calc(100% - 50px);
-    background: #fff;
+    background: rgb(8,8,8);
     border-radius: 15px;
-    opacity: 0.94;
+    opacity: 0.98;
     
 }
 
 .popup .content header {
     padding: 5px 25px;
-    border-bottom: 1px solid #ccc;
-    border-radius: 15px;
+    border: 1px solid rgb(8,8,8);
+    border-radius: 5px;
 }
 
 .content header p {
     font-size: 20px;
     font-weight: 500;
+    color: orange;
 }
 
 .content header i {
-    color: #8b8989;
+    color: #e71f1ff5;
     cursor: pointer;
-    font-size: 23px;
+    font-size: 30px;
+    
 }
 
 .content form {
@@ -438,10 +438,16 @@ a.userpage-link {
 
 form .row label {
     display: block;
-    color: #000;
+    color: rgb(255, 255, 255);
+}
+
+label.label-note-public {
+  color: white;
 }
 
 .content form :where(input, textarea) {
+    color: white;
+    background-color: rgb(8,8,8);
     width: 100%;
     height:30px;
     outline: none;
@@ -449,6 +455,9 @@ form .row label {
     padding: 0 15px;
     border-radius: 4px;
     border: 1px solid #999;
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 4px;
 }
 
 input.form-image-resize {
@@ -468,7 +477,7 @@ input#image {
 
 svg.aioutlinefile{
   display: inline;
-  
+  color: white;
 }
 
 figure {
@@ -481,6 +490,11 @@ figure {
     height: 150px;
     resize: none;
     padding: 8px 15px;
+    background-color:rgb(8,8,8);
+    color:lightgrey;
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 10px;
 }
 
 .content form button {
@@ -493,7 +507,7 @@ figure {
     cursor: pointer;
     font-size: 17px;
     border-radius: 4px;
-    background: #6a93f8;
+    background: rgb(230, 106, 5);
 }
 
 .category {
@@ -556,7 +570,7 @@ label[for=yes] {
 }
 
 #no:checked ~ .switch {
-  background: #eb4f37;
+  background: #af1700;
 }
 #no:checked ~ .switch span {
   background: #fff;
@@ -601,7 +615,7 @@ footer {
 .loginregisterwrapper{
     overflow: hidden;
     max-width: 390px;
-    background: #fff;
+    background: rgb(8,8,8);
     padding: 30px;
     border-radius: 5px;
     box-shadow: 20px 30px 30px rgba(0, 0, 0, 0.8);
@@ -611,6 +625,7 @@ footer {
     width: 200%;
   }
   .loginregisterwrapper .title{
+    color: white;
     width: 50%;
     font-size: 35px;
     font-weight: 600;
@@ -655,7 +670,7 @@ footer {
     left: 0;
     z-index: 0;
     border-radius: 5px;
-    background: -webkit-linear-gradient(25deg,#d64c7f,#ee4758 50%);
+    background: cyan;
     transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
   }
   input[type="radio"]{
@@ -665,19 +680,21 @@ footer {
     left: 50%;
   }
   #signup:checked ~ label.signup{
-    color: #fff;
+    color: rgb(0, 0, 0);
     cursor: default;
     user-select: none;
   }
   #signup:checked ~ label.login{
-    color: #000;
+    color: rgba(255, 255, 255, 0.459);
   }
   #login:checked ~ label.signup{
-    color: #000;
+    color: rgb(255, 255, 255, 0.459);
   }
   #login:checked ~ label.login{
+    color: #000;
     cursor: default;
     user-select: none;
+    border: orange;
   }
 
   .form-container .form-inner form.form-change{
@@ -707,24 +724,30 @@ footer {
     transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
   }
   .form-inner form .field{
+    
     height: 50px;
     width: 100%;
     margin-top: 20px;
   }
+
+  input.input-loginregister{
+    background-color: rgb(8,8,8);
+  }
+
   .form-inner form .field input{
+    color: white;
     height: 100%;
     width: 100%;
     outline: none;
     padding-left: 15px;
     border-radius: 5px;
-    border: 1px solid lightgrey;
-    border-bottom-width: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.459);
+
     font-size: 17px;
     transition: all 0.3s ease;
   }
   .form-inner form .field input:focus{
-    border-color: #fc83bb;
-    /* box-shadow: inset 0 0 3px #fb6aae; */
+    border-color: cyan;
   }
   .form-inner form .field input::placeholder{
     color: #999;
@@ -817,7 +840,7 @@ footer {
 
 .form-main.show-form-main, 
 .form-main.show-form-main .loginregisterwrapper{
-    opacity: 1;
+    opacity: 0.99;
     pointer-events: auto;
 }
 
@@ -830,10 +853,11 @@ main {
 /* CSS del Header */
 header {
     overflow: hidden;
+    color: white;
     padding-top: 5px;
     vertical-align: middle;
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(8,8,8);
 }
 
 .main-header {
@@ -915,7 +939,7 @@ label.label-image-newnote {
 }
 
 .error-p{
-  color: red;
+  color: rgb(255, 53, 53);
   padding-bottom: 10px;
   padding-top: 10px;
   text-align: center;
@@ -938,19 +962,20 @@ p.not-a-member {
 
 div.loading-text {
   color: orange;
-  font-size: 0.9em;
-  position: absolute;
-  left: 50%;
-  top: 56%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  font-size: 1em;
+  display: block;
+  text-align: center;
+  align-self: center;
+  padding-top: 150px;
+
+  
 }
 
 .css-1nzyqsx{
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   position: absolute;
-  left: 44%;
+  left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);

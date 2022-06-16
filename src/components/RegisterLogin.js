@@ -83,10 +83,10 @@ export const RegisterLoginForm = ({showForm}) => {
                <form onSubmit={handleLoginForm} 
               className={formChange ? "login form-change" : "login"}>
                  <div className="field">
-                    <input type="text" id="email" name="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
+                    <input className="input-loginregister" type="text" id="email" name="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
                  </div>
                  <div className="field">
-                    <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
+                    <input className="input-loginregister" type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
                  </div>
                  <div className="pass-link">
                     <p className="forgot-password"> Forgot password? (soon)</p>
@@ -104,13 +104,13 @@ export const RegisterLoginForm = ({showForm}) => {
 
               <form onSubmit={handleRegisterForm} className="signup">
                  <div className="field">
-                    <input type="text" id="registeremail" name="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" required />
+                    <input className="input-loginregister" type="text" id="registeremail" name="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" required />
                  </div>
                  <div className="field">
-                    <input type="password" id="pass1" name="pass1" onChange={(e) => setPass1(e.target.value)} placeholder="Password" required />
+                    <input className="input-loginregister" type="password" id="pass1" name="pass1" onChange={(e) => setPass1(e.target.value)} placeholder="Password" required />
                  </div>
                  <div className="field">
-                    <input type="password" id="pass2" name="pass2" onChange={(e) => setPass2(e.target.value)} placeholder="Confirm password" required />
+                    <input className="input-loginregister" type="password" id="pass2" name="pass2" onChange={(e) => setPass2(e.target.value)} placeholder="Confirm password" required />
                  </div>
                  <div className="field btn">
                     <div className="btn-layer"></div>

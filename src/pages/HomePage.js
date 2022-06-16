@@ -18,7 +18,7 @@ export const HomePage = () => {
 
     const {notes, loading, addNote, removeNote} = useNotes();
     const {user, token} = useContext(AuthContext);
-    console.log(notes);
+   
     
 
     if(loading) return <p> cargando notas... </p>;
