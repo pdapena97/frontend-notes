@@ -145,7 +145,7 @@ export const Note = ({note, removeNote}) => {
                             className="uil uil-pen">Edit</i></li>
 
 
-                        <li><i onClick={() => {
+                            <li className="edit-delete-list"><i onClick={() => {
 
                             if (window.confirm("Are you sure")) deleteNote(note.id);
                             }} 

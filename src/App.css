@@ -121,7 +121,7 @@ a.userpage-link {
     padding: 5px 5px 5px 5px;
     font-weight: 500;
     background-color: #000000;
-    color: #fffefe;
+    color: #ffffff;
 }
 
 .note span {
@@ -136,7 +136,7 @@ a.userpage-link {
 .note .bottom-content{
     border-bottom: 1px solid rgb(63, 52, 52);
     padding-top: 10px;
-    padding-left: 15px;
+    padding-left: 20px;
     padding-right: 70px;
     padding-bottom: 15px;
 }
@@ -186,7 +186,7 @@ a.userpage-link {
 }
 
 .menu li:hover {
-    background: #978d8d;
+    background: #000000;
 }
 
 .menu li i {
@@ -195,7 +195,11 @@ a.userpage-link {
 
 
 
-@media screen and (max-width: 700px) {
+
+
+/* MEDIA QUERYS */
+
+@media screen and (max-width: 1000px) {
 
     .note span {
     font-size: 0.8rem;
@@ -225,7 +229,115 @@ a.userpage-link {
         grid-template-rows: max-content;
         border-top: 1px solid rgb(63, 52, 52);
     }
+
+    img {
+      object-fit:cover;
+      width:100%;
+      height:500px;
+  }
 }
+
+
+
+
+@media screen and (min-width: 1000px) {
+  .wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr))
+  }
+
+  div.details {
+    max-width: max-content;
+    
+  }
+
+  li.edit-detele-list  {
+    border: none;
+  } 
+  
+  .wrapper note {
+    justify-content: auto;
+  }
+
+  span.by-date-span {
+    padding-right: 30px;
+    font-size: 11px;
+  }
+
+  img {
+    max-height: 150px;
+    max-width: 250px;
+    width: 98%;
+    object-fit:cover;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .wrapper li {
+    height: auto;
+    align-items: center;
+  }
+
+    li.note {
+      border: 2px solid rgb(63, 52, 52);
+      border-radius: 20px;
+      border-top: 2px;
+      border-right: none;
+      border-left: none;
+
+    }
+
+   .bottom-content {
+    justify-content: space-between;
+    padding-right: 0;
+    max-width: max-content;
+    border: none;
+  }
+
+  .note .bottom-content {
+    padding-right: 10px;
+    padding-left: 10px;
+    border: none;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  p.note-title {
+    font-size: 25px;
+    padding-top: 10px;
+  }
+
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 20px;
+  }
+
+  span.text-from-note  {
+    color: lightgray;
+  }
+
+  header.main-header {
+  }
+
+  div.search {
+    justify-content: center;
+    padding-right: 0;
+    padding-left: 200px;
+    margin: 0 0 16px 0;
+  }
+}
+
+
+
+
+
+
+
 
 /* CSS de la barra del Search */
 
@@ -291,9 +403,10 @@ a.userpage-link {
 
 
 .popup .content{
+
     width: calc(100% - 50px);
     background: #fff;
-    border-radius: 5px;
+    border-radius: 15px;
     opacity: 0.94;
     
 }
@@ -301,6 +414,7 @@ a.userpage-link {
 .popup .content header {
     padding: 5px 25px;
     border-bottom: 1px solid #ccc;
+    border-radius: 15px;
 }
 
 .content header p {
@@ -315,16 +429,15 @@ a.userpage-link {
 }
 
 .content form {
-    margin: 15px 25px 15px;
+    margin: 7px 25px 15px;
 }
 
 .content form .row {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 form .row label {
     display: block;
-    margin-bottom: 6px;
     color: #000;
 }
 
@@ -353,13 +466,15 @@ input#image {
   display:none;
 }
 
-
+svg.aioutlinefile{
+  display: inline;
+  
+}
 
 figure {
   display:inline-flex;
   padding-left: 0px;
-  padding-top: 5px;
-  padding-bottom: 10px;
+ 
 }
 
 .content form textarea {
@@ -371,7 +486,7 @@ figure {
 .content form button {
     margin-top: 15px;
     width: 100%;
-    height: 50px;
+    height: 40px;
     border: none;
     outline: none;
     color: #fff;
@@ -385,14 +500,16 @@ figure {
     padding-top: 0px;
 }
 
-
+div.row.description {
+  margin-bottom: 0px;
+}
 
 /* CSS DEL RADIO BUTTON DE NEW NOTE */
 .switch {
   align-content: center;
   padding-left: -2px;
   width: 150px;
-  height: 50px;
+ 
   text-align: center;
   margin: 0px 0 0 0px;
   background: #00bc9c;
@@ -421,10 +538,11 @@ input[type=radio] {
 
 .toggle-radio {
   align-items: center;
-  padding-top: 15px;
+  padding-top: 10px;
 }
+
 .switch label {
-  padding:0px 20px 0px 20px ;
+  padding:0px 20px 20px 20px ;
   cursor: pointer;
   color: rgba(0,0,0,0.5);
   width: 60px;
@@ -782,7 +900,8 @@ img.image-preview {
   object-fit:contain;
   display: inline;
   align-items: left;
-  height: 50px;
+  height: 40px;
+  width: 40px;
   padding-bottom: 0px;
 }
 
@@ -790,8 +909,9 @@ div.row.image {
   margin-bottom: 0px;
 }
 
-.label-image-newnote {
+label.label-image-newnote {
   align-items: center;
+  display: inline !important;
 }
 
 .error-p{
@@ -835,3 +955,4 @@ div.loading-text {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+

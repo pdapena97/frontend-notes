@@ -18,6 +18,7 @@ export const HomePage = () => {
 
     const {notes, loading, addNote, removeNote} = useNotes();
     const {user, token} = useContext(AuthContext);
+    console.log(notes);
     
 
     if(loading) return <p> cargando notas... </p>;
@@ -49,9 +50,6 @@ export const HomePage = () => {
         }
     };
 
-    
-
-    //console.log(notes)
 
     return (
         
@@ -79,12 +77,12 @@ export const HomePage = () => {
 
                       <div className="row category">
                         <label>Category</label>
-                        <input type="text" id="category" name="category" required />
+                        <input type="text" id="category" name="category" alt="Category input" required />
                       </div>
 
                       <div className="row image">
                     
-                        <label htmlFor="image" className="label-image-newnote"><AiOutlineFileUnknown size="2rem" display="block"  className="aioutlinefile"/> Image (optional)</label>
+                        <label htmlFor="image" className="label-image-newnote"><AiOutlineFileUnknown size="2rem" display="block"  className="aioutlinefile"/> Image </label>
                         <input className="form-image-resize" type="file" id="image" name="image" accept="image/*" onChange={(e) => setImage(e.target.files[0])}/>
                         {image ? <figure> 
                             <img className="image-preview" src={URL.createObjectURL(image)} alt="Preview"/></figure> : null}
@@ -122,7 +120,9 @@ export const HomePage = () => {
   
          <>   
                    
-         <PublicNoteList notes={notes.filter((note) => note.text.toLowerCase().includes(searchText.toLocaleLowerCase()))} removeNote={removeNote} /> 
+         <PublicNoteList notes={
+           notes.filter((note) => note.text.toLowerCase().includes(searchText.toLocaleLowerCase())
+              ).sort((a , b) => b.created_at - a.created_at)} removeNote={removeNote} /> 
          </>
 
         </section>

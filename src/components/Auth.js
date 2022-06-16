@@ -17,7 +17,7 @@ export const Auth = () => {
         ? (
         <>
         <span className="avatar-link">
-        <Link to={`/user/${user.id}`} className="userpage-link">  <BsPerson className="bsperson"  size="2.4rem" /></Link> {""}    
+        <Link to={`/user/${user.id}`} alt="User Page Link"className="userpage-link">  <BsPerson className="bsperson"  size="2.4rem" /></Link> {""}    
         </span>
         
         <span onClick={() => {
