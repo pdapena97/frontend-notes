@@ -6,7 +6,17 @@ import { AuthContext } from "../context/AuthContext";
 import useNotes from "../hooks/useNotes";
 import { sendNoteService } from "../services";
 import {AiOutlineFileUnknown} from "react-icons/ai"
-//import { LoadingScreen } from "../components/LoadingScreen";
+
+
+
+// Muy bajo rendimiento y optimización. 
+// Un componente no deberia tener un return () tan enorme.
+// Optimizar
+// Hay bastante código que no uso en la aplicación o que puedo reutilizar
+// React POP UPS
+// React Memo ...
+
+
 
 export const HomePage = () => {
 

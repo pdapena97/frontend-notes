@@ -28,6 +28,8 @@ export const Note = ({note, removeNote}) => {
         }
     };
 
+
+    // Edit Note no implementado aún
     const handleEditNote = async (e) => {
         e.preventDefault();
 
@@ -37,8 +39,9 @@ export const Note = ({note, removeNote}) => {
             const data = new FormData(e.target);
             const note = await editNoteService(data, token);
             console.log(note);
+            
 
-            //addNote(note);  //tamos aqui. error. 
+            //addNote(note);
             e.target.reset();
             setImage(null);
           

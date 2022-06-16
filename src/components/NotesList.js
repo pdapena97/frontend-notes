@@ -2,8 +2,7 @@
 import { Note } from "./Note";
 
 
-// en realidad las notas que vienen aqui ya son publicas
-// la prop del removeNote es innecesaria.
+
 
 export const PublicNoteList = ({notes, removeNote}) => {
     return (
@@ -17,7 +16,6 @@ export const PublicNoteList = ({notes, removeNote}) => {
 };
 
 
-// Las notas de un usuario en concreto, sean públicas o no
 export const UserNoteList =({notes, removeNote}) => {
     return notes.length ? (
         <ul className="wrapper">  
