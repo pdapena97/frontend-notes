@@ -90,15 +90,15 @@ a.userpage-link {
 .add-box .icon {
     height: 78px;
     width: 78px;
-    color: rgb(240, 240, 240);
+    color: rgb(255, 255, 255);
     font-size: 40px;
     border-radius: 50%;
     justify-content: center;
-    border: 2px dashed rgb(243, 241, 237);
+    border: 2px dashed orange;
 }
 
 .add-box p {
-    color: rgb(180, 180, 180);
+    color: orange;
     font-weight: 500;
     margin-top: 6px;
 }
@@ -537,7 +537,7 @@ footer {
     left: 0;
     z-index: 0;
     border-radius: 5px;
-    background: -webkit-linear-gradient(left, #770101, #e7630a);
+    background: -webkit-linear-gradient(25deg,#d64c7f,#ee4758 50%);
     transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
   }
   input[type="radio"]{
@@ -567,10 +567,14 @@ footer {
   }
   
   span.signup-now {
-      color:#000000;
+      color:rgb(8, 28, 139);
+      font-weight: bolder;
       padding: 10px;
   }
 
+  p.forgot-password {
+    font-size: 0.7rem;
+  }
 
   .loginregisterwrapper .form-container{
     width: 100%;
@@ -641,7 +645,7 @@ footer {
     width: 300%;
     position: absolute;
     left: -100%;
-    background: -webkit-linear-gradient(right, #2ab115da, #44b931, #072401, #09c728);
+    background: -webkit-linear-gradient(right, #0f0c29, #302b63, #24243e);
     border-radius: 5px;
     transition: all 0.4s ease;;
   }
@@ -792,17 +796,22 @@ div.row.image {
 
 .error-p{
   color: red;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   text-align: center;
+  font-weight: bolder;
 }
+
+
 p.userpagep {
   color: orange;
   padding-top: 10px;
   text-align: center;
 }
 
-
+p.not-a-member {
+  text-align: center;
+}
 
 
 

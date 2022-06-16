@@ -14,7 +14,7 @@ export const LoadingScreen = ( ) => {
             setLoading(false);
             navigate("/")
         }, 1000)
-    }, [])
+    }, [navigate])
 
     return (
         <div > 

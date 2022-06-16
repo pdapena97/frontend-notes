@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { getUserNotesService, getUserPublicNotesService } from "../services";
+import { getUserPublicNotesService } from "../services";
 
 
 const usePublicNotes = (id) => {

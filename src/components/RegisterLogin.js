@@ -89,7 +89,7 @@ export const RegisterLoginForm = ({showForm}) => {
                     <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
                  </div>
                  <div className="pass-link">
-                    <a href="#">Forgot password? (soon)</a>
+                    <p className="forgot-password"> Forgot password? (soon)</p>
                  </div>
                  <div className="field btn">
                     <div className="btn-layer"></div>
@@ -116,7 +116,8 @@ export const RegisterLoginForm = ({showForm}) => {
                     <div className="btn-layer"></div>
                     <input type="submit" value="Signup" />
                  </div>
-                 {error ? <p className="error-p">{error}</p> : null }
+                 {error ? <p className="error-p"> {error}</p> : null }
+                 
               </form>
            </div>
         </div>

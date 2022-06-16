@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { UserNotes } from "../components/UserNotes";
@@ -6,7 +6,7 @@ import { UserPublicNotes } from "../components/UserPublicNotes";
 import { AuthContext } from "../context/AuthContext";
 import useUser from "../hooks/useUser";
 
-
+// useState para errores, creo. lo tenia importado
 
 export const UserPage = () => {
     const {id} = useParams();

@@ -6,7 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 import useNotes from "../hooks/useNotes";
 import { sendNoteService } from "../services";
 import {AiOutlineFileUnknown} from "react-icons/ai"
-import { LoadingScreen } from "../components/LoadingScreen";
+//import { LoadingScreen } from "../components/LoadingScreen";
 
 export const HomePage = () => {
 

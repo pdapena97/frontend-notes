@@ -68,7 +68,7 @@ export const getUserNotesService = async (id, token) => {
 
 
 
-
+// en principio esta sobra
 export const getSingleNoteService = async (id) => {
     const response = await fetch(`${process.env.REACT_APP_BACKEND}/note/${id}`);
 
@@ -104,7 +104,7 @@ export const registerUserService = async ({email, password}) => {
 // REUTILIZAR? 
 
 export const loginUserService = async ({email, password}) => {
-    const response = await fetch ("http://localhost:4000/login", {
+    const response = await fetch (`${process.env.REACT_APP_BACKEND}/login`, {
         
         method: "POST",
         headers: {
@@ -123,9 +123,7 @@ export const loginUserService = async ({email, password}) => {
     return json;
 };
 
-// LA DE BERTO ES A /USER Y PUNTO. NADA DE ID. AHI ESTA EL PROBLEMA. BACKEND
-// SOLO REQUIERE EL TOKEN
-// este ENDPOINT no lo tengo. falta hacerlo en el POSTMAN un get a user.
+
 export const getMyUserDataService = async ({token}) => {
     const response = await fetch ("http://localhost:4000/user/", {
         headers: {
@@ -134,7 +132,7 @@ export const getMyUserDataService = async ({token}) => {
     });
     
     const json = await response.json();
-    //console.log(json);
+    
 
     if (!response.ok) {
         throw new Error(json.message);
@@ -156,7 +154,7 @@ export const getUserDataService = async (id) => {
     return json.data;
 };
 
-// mal el process.env
+// mal el process.env ???? creo que va bien
 export const sendNoteService = async (data, token) => {
     const response = await fetch (`${process.env.REACT_APP_BACKEND}/`, {
         method: 'POST',
@@ -170,7 +168,6 @@ export const sendNoteService = async (data, token) => {
     
     
     console.log(json);
-    //console.log(json.data);
 
     if (!response.ok) {
         throw new Error(json.message);
