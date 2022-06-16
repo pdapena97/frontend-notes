@@ -29,7 +29,7 @@ export const UserPage = () => {
              <h1> User:  {user.email} </h1>
              <p className="user-page-p"> User id: {user.id} </p>
              <p className="user-page-p"> Registed on: {new Date(user.created_at).toLocaleString()}</p>
-             <p className="userpagep"> These are all you notes </p>
+             <p className="userpagep"> These are all the public notes </p>
    
              <UserNotes id={user.id} /> 
              <UserPublicNotes id={id} />

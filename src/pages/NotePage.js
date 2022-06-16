@@ -21,3 +21,5 @@ export const NotePage = () => {
         </section>
     );
 };
+
+// me dará tiempo?

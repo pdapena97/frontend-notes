@@ -25,7 +25,7 @@ p.user-page-p {
 
 
 a {
-    color: #ffffff;
+    color: orange;
     padding:17px;
     text-decoration: none;
 }
@@ -771,7 +771,7 @@ h1 {
 
 section.not-found-page{
   text-align: center;
-  text-decoration: underline solid;
+  margin-top: 300px;
 }
 
 img.image-preview {

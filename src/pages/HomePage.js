@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { ErrorMessage } from "../components/ErrorMessage";
-import { NewNote } from "../components/NewNote";
 import { PublicNoteList } from "../components/NotesList";
 import { Search } from "../components/Search";
 import { AuthContext } from "../context/AuthContext";
@@ -35,9 +34,8 @@ export const HomePage = () => {
             
             const data = new FormData(e.target);
             const note = await sendNoteService(data, token);
-            console.log(note);
 
-            addNote(note);  //tamos aqui. error. 
+            addNote(note);  
             e.target.reset();
             setImage(null);
           
