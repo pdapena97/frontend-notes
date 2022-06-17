@@ -16,7 +16,7 @@ const usePublicNotes = (id) => {
             try {
                 setLoading(true);
                 
-                const data =  await getUserPublicNotesService(id,token);   //backend
+                const data =  await getUserPublicNotesService(id,token);   
                 
                 setNotes(data);
 

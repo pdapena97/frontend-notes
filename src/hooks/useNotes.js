@@ -8,7 +8,7 @@ const useNotes = (id) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const {token} = useContext(AuthContext);
-    // EL TOKEN LLEGA AQUÍ !!
+    
     
 
     useEffect(() => {

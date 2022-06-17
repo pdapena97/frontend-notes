@@ -22,4 +22,3 @@ export const NotePage = () => {
     );
 };
 
-// me dará tiempo?

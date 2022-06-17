@@ -6,7 +6,7 @@ import { UserPublicNotes } from "../components/UserPublicNotes";
 import { AuthContext } from "../context/AuthContext";
 import useUser from "../hooks/useUser";
 
-// useState para errores, creo. lo tenia importado
+
 
 export const UserPage = () => {
     const {id} = useParams();
@@ -46,5 +46,5 @@ export const UserPage = () => {
 };
 
 
-    // luego lo de params, el erorr..
+   
    

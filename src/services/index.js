@@ -1,28 +1,25 @@
 
-// deberia no poder el token. en la homepage todas las publicas.
-// luego un apartado por si el usuario quiere ver las suyas.
-// hacer un backend que no puda autentificacion + notas publicas
+
 export const getAllNotesService = async (token) => {
 
     const response = await fetch("http://localhost:4000/publicnotes");   
-        //Problema con el process.env
-        //console.log(token); 
+        
     
-    // NO LE LLEGA EL TOKEN
+
 
     const json = await response.json();
-    //console.log(json);
+   
     
 
     if (!response.ok) {
         throw new Error(json.message);
     }
-    //json.data ???
+    
     return json.data;  
 
 };
 
-// cuidao aqui con la url del fetch
+
 
 
 export const getUserPublicNotesService = async (id,token) => {
@@ -32,8 +29,7 @@ export const getUserPublicNotesService = async (id,token) => {
             Authorization: token,
         },
     });
-    //console.log(response);
-    //console.log(token);
+   
     const json = await response.json();
    
     
@@ -53,8 +49,7 @@ export const getUserNotesService = async (id, token) => {
             Authorization: token,
         },
     });
-    //console.log(response);
-    //console.log(token);
+    
     const json = await response.json();
     
     
@@ -68,7 +63,7 @@ export const getUserNotesService = async (id, token) => {
 
 
 
-// en principio esta sobra
+
 export const getSingleNoteService = async (id) => {
     const response = await fetch(`${process.env.REACT_APP_BACKEND}/note/${id}`);
 
@@ -101,7 +96,7 @@ export const registerUserService = async ({email, password}) => {
 };
 
 
-// REUTILIZAR? 
+
 
 export const loginUserService = async ({email, password}) => {
     const response = await fetch (`${process.env.REACT_APP_BACKEND}/login`, {
@@ -112,7 +107,7 @@ export const loginUserService = async ({email, password}) => {
         },
         body: JSON.stringify({email, password}),
     });
-    //console.log(response);
+   
     const json = await response.json();
     
 
@@ -154,7 +149,7 @@ export const getUserDataService = async (id) => {
     return json.data;
 };
 
-// mal el process.env ???? creo que va bien
+
 export const sendNoteService = async (data, token) => {
     const response = await fetch (`${process.env.REACT_APP_BACKEND}/`, {
         method: 'POST',
@@ -194,7 +189,6 @@ export const deleteNoteService = async ({id, token}) => {
 };
 
 
-// editar nota texto imagen titulo
 export const editNoteService = async ({id, token}) => {
     const response = await fetch (`${process.env.REACT_APP_BACKEND}/note/${id}`, {
         method: "PUT",
